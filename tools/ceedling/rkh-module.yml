@@ -1,0 +1,13 @@
+---
+
+# Notes:
+# Sample project C code is not presently written to produce a release artifact.
+# As such, release build options are disabled.
+# This sample, therefore, only demonstrates running a collection of unit tests.
+
+:project:
+  :which_ceedling: ../../third-party/ceedling
+
+:module_generator:
+    :inc_root: inc/
+
