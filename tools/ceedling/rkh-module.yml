@@ -1,13 +1,13 @@
----
+#
+# Load and merge configuration settings into the main project configuration. 
+# Each task is named after a *.yml file found in the configured options 
+# directory. 
+#
+# Command line: ceedling options:rkh-module <task> ...
+#
 
-# Notes:
-# Sample project C code is not presently written to produce a release artifact.
-# As such, release build options are disabled.
-# This sample, therefore, only demonstrates running a collection of unit tests.
-
-:project:
-  :which_ceedling: ../../third-party/ceedling
-
-:module_generator:
-    :inc_root: inc/
+:tools:
+    :test_compiler:
+        :arguments:
+        - "-DMORE"
 
