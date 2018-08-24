@@ -73,7 +73,7 @@
     - -lm
 
 :gcov:
-  :html_report_type: basic
+  :html_report_type: detailed
 
 :module_generator:
   :inc_root: inc/
