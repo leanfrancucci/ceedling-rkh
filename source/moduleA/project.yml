@@ -34,11 +34,12 @@
   :include:
     - inc/**
     - ../moduleB/inc/**
+    - ../portable/test/**
   :support:
     - test/support
 
 :defines:
-  :common: &common_defines []
+  :common: &common_defines [__TEST__]
   :test:
     - *common_defines
     - TEST
