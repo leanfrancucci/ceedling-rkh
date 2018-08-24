@@ -1,24 +1,17 @@
 ---
-
-# Notes:
-# Sample project C code is not presently written to produce a release artifact.
-# As such, release build options are disabled.
-# This sample, therefore, only demonstrates running a collection of unit tests.
+#
+# RKH project YAML for ceedling test
+#
 
 :project:
   :use_exceptions: FALSE
   :use_test_preprocessor: TRUE
   :use_auxiliary_dependencies: TRUE
   :build_root: build
-  :which_ceedling: ../../third-party/ceedling
-  # :release_build: TRUE
+  :which_ceedling: ../third-party/ceedling
   :test_file_prefix: test_
   :options_paths: 
-    - ../../tools/ceedling
-
-#:release_build:
-#  :output: TempSensor.out
-#  :use_assembly: FALSE
+    - ../tools/ceedling
 
 :environment: []
 
@@ -27,16 +20,20 @@
 
 :paths:
   :test:
-    - +:test/**
-    - -:test/support
+    - +:moduleA/test/**
+    - +:moduleB/test/**
+    - -:moduleA/test/support
+    - -:moduleB/test/support
   :source:
-    - src/**
+    - moduleA/src/**
+    - moduleB/src/**
   :include:
-    - inc/**
-    - ../moduleB/inc/**
-    - ../portable/test/**
+    - moduleA/inc/**
+    - moduleB/inc/**
+    - portable/test/**
   :support:
-    - test/support
+    - moduleA/test/support
+    - moduleB/test/support
 
 :defines:
   :common: &common_defines [__TEST__]
@@ -80,8 +77,6 @@
   :inc_root: inc/
 
 :plugins:
-#:load_paths:
-#    - ../../third-party/ceedling/plugins
   :enabled:
     - stdout_pretty_tests_report
     - module_generator
