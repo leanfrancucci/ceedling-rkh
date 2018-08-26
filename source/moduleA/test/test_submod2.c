@@ -2,6 +2,7 @@
 #include "submod2.h"
 #include "Mock_submod1.h"
 #include "Mock_submod3.h"
+#include "Mock_rkhassert.h"
 
 void setUp(void)
 {
@@ -25,5 +26,6 @@ void test_submod2_NeedToImplement(void)
     submod1_bar_ExpectAndReturn(0);
     res = submod2_foo();
 
+    printf("RKH_CFG_FWK_MAX_SMA = %i\n", RKH_CFG_FWK_MAX_SMA);
     TEST_ASSERT_EQUAL(0, res);
 }
