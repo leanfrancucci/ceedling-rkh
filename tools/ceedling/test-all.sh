@@ -3,7 +3,7 @@
 
 source_dir="../../source"
 ceedling_dir="tools/ceedling"
-modules="moduleA moduleB"
+modules="moduleA moduleB moduleC"
 
 if [ ! -d $source_dir ]; then
     echo "[ERROR] This script must be invoked from "$ceedling_dir
